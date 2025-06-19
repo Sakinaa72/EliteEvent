@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Login from './components/Login'
+import "./style.css"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import EventList from "./components/EventList"
+import Register from './components/Register';
+import MyRegistrations from "./components/MyRegistrations";
+import FeedbackForm from "./components/FeedbackForm";
+import EventDetail from "./components/EventDetail";
+import CreateEvent from "./components/CreateEvent";
+import Navbar from './components/Navbar';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+    <Navbar />
+      <Routes>
+        <Route path="/" element={<Login/>}/>
+        <Route path="/register" element={<Register />} />
+        <Route path="/events" element={<EventList />} />
+        <Route path="/my-registrations" element={<MyRegistrations />} />
+        <Route path="/events/:eventId/feedback" element={<FeedbackForm />} />
+        <Route path="/events/:id" element={<EventDetail />} />
+        <Route path="/create-event" element={<CreateEvent />} />
+      </Routes>  
+    </>  
+  )
 }
 
-export default App;
+export default App
