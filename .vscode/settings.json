@@ -1,0 +1,22 @@
+{
+  // ✅ Keep useful suggestions like auto-imports, variables, modules, etc.
+  "editor.suggestOnTriggerCharacters": true,
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": false
+  },
+
+  // 🔕 Disable intrusive extras
+  "editor.inlineSuggest.enabled": false,
+  "editor.snippetSuggestions": "none",
+
+  // ✅ Allow auto-imports and smart code actions
+  "javascript.suggest.autoImports": true,
+  "typescript.suggest.autoImports": true,
+  "editor.codeActionsOnSave": {
+    "source.addMissingImports": "explicit"
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always"
+}
